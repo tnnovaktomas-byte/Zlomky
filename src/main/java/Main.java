@@ -4,7 +4,6 @@ public class Main {
 
     static void main() {
         IO.println("Projekt ZLOMKY"); //Novinka javy 25 "IOP"
-        IO.println("Git změna lol");
 
         var a = new Zlomek(); // konstruktor bez parametru = defaultni konstruktor
 
