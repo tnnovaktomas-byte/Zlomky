@@ -7,13 +7,19 @@ public class Main {
 
         var a = new Zlomek(); // konstruktor bez parametru = defaultni konstruktor
 
-        a.setCitatel(3);
-        a.setJmenovatel(4);
+        a.setCitatel(1);
+        a.setJmenovatel(2);
         IO.println("Zlomek : " +a.getCitatel() +"/"+a.getJmenovatel());
 
-        Zlomek b = new Zlomek(4, 5);
+        Zlomek b = new Zlomek( 3, 4);
 
+        IO.println(a);
         IO.println(b);
+
+        var soucet = a.plus(b);
+
+        IO.println(soucet.zkratit());
+
 
     }
 
