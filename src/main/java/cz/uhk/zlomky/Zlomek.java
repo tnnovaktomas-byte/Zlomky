@@ -6,8 +6,8 @@ public class Zlomek {
     private int jmenovatel;
 
     public Zlomek () {
-        citatel = 1;
-        jmenovatel = 2;
+        citatel = 0;
+        jmenovatel = 1;
     }
 
     /**
@@ -55,10 +55,29 @@ public class Zlomek {
 
 
     public Zlomek plus(Zlomek druhy) {
-        int jm = jmenovatel * druhy.jmenovatel;
         int cit = citatel * druhy.jmenovatel + druhy.citatel * jmenovatel;
+        int jm = jmenovatel * druhy.jmenovatel;
         return new Zlomek(cit, jm);
     }
+
+    public Zlomek minus(Zlomek druhy) {
+        int cit = citatel * druhy.jmenovatel - druhy.citatel * jmenovatel;
+        int jm = jmenovatel * druhy.jmenovatel;
+        return new Zlomek(cit, jm);
+    }
+
+    public Zlomek krat(Zlomek druhy) {
+        int jm = jmenovatel * druhy.jmenovatel;
+        int cit = citatel * druhy.citatel;
+        return new Zlomek(cit, jm);
+    }
+
+    public Zlomek deleno(Zlomek druhy) {
+        int jm = jmenovatel * druhy.citatel;
+        int cit = citatel * druhy.jmenovatel;
+        return new Zlomek(cit, jm);
+    }
+
 
     public Zlomek zkratit () {
         int delitel = nsd(citatel, jmenovatel); //vypocet nejv. spol. delitele
@@ -85,6 +104,13 @@ public class Zlomek {
             b = zbytek;
         } while (zbytek != 0);
         return a;
+    }
+
+    //pretizene plus pro pricteni celeho cisla ke zlomku
+    public Zlomek plusCislo(int cislo) {
+        int cit = citatel + jmenovatel * cislo;
+
+        return new Zlomek(cit, cit);
     }
 
 }
