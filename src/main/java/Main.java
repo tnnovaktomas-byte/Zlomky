@@ -38,6 +38,9 @@ public class Main {
         Zlomek prumer = prumer(pole);
         IO.println("Průměr je %s".formatted(prumer.zkratit()));
 
+        int celeCislo = new Zlomek(25,12).intValue();
+        IO.println("Zlomek na celé číslo:  %d".formatted(celeCislo));
+
     }
 
     private static Zlomek prumer(Zlomek[] pole) {
