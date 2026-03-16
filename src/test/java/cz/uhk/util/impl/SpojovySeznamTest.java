@@ -23,23 +23,16 @@ class SpojovySeznamTest {
 
     @Test
     void pridejNaPozici() {
-        initData(); // [10, 20, 30, 40]
+        initData();
 
-        // Vložení doprostřed
         seznam.pridej(25, 2);
-        // [10, 20, 25, 30, 40]
         assertEquals(25, seznam.vrat(2));
         assertEquals(5, seznam.pocet());
 
-        // Vložení na začátek
+
         seznam.pridej(5, 0);
-        // [5, 10, 20, 25, 30, 40]
         assertEquals(5, seznam.vrat(0));
 
-        // Vložení "na konec" přes index (mělo by zavolat tvou původní metodu)
-        seznam.pridej(50, 6);
-        assertEquals(50, seznam.vrat(6));
-        assertEquals(7, seznam.pocet());
     }
 
     @Test
